@@ -146,6 +146,7 @@ if [[ -f $CONTAINER_INIT_DIR/start-dapplications.sh ]]; then
          --volume="$DATA_SHARE_DIR:/data:rw" \
          --volume="$GAZEBO_MODEL_DIR:/home/ros/.gazebo/models:rw" \
          --volume="$CONTAINER_INIT_DIR:/home/ros/container-scripts:rw" \
+         -p 8888:8888 \
          --name=$CONTAINER_NAME   \
          jacknlliu/tensorflow-openai-ros:kineticX /home/ros/container-scripts/start-dapplications.sh $ROS_MASTER_URI $MYSELF_CONTAINER_IP $ROBOT_IP_ADDR $LOCAL_HOST_IP
 else
